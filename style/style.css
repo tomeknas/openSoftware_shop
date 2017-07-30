@@ -9,13 +9,11 @@ body{
 	margin-top:20px;
 	height:600px;
 	width:1000px;
-	border: 2px solid red;
 	background-color:white;
 	opacity:0.9;
 	border-radius:20px;
 }
 #header{
-	border: 2px solid green;
 	height:15%;
 	box-sizing:border-box;
 }
@@ -24,12 +22,10 @@ font-size: 30px;
 margin-top:20px;
 }
 #sidebar{
-	border: 2px solid green;
 	height:85%;
 	box-sizing: border-box;
 }
 #content{
-	border: 2px solid green;
 	height:85%;
 	box-sizing: border-box;
 }
