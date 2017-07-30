@@ -9,14 +9,15 @@
 	<title>shop</title>
 </head>
 <body>
-		<div class="container">
+	<div ng-app="app">
+		<div ng-controller="ctrl" class="container">
 			<div id="header" class="col-md-12">
-				<p class="text-right"><img src="img/shopping-cart.png" alt="cart">in basket</p>
+				<p class="text-right"><img src="img/shopping-cart.png" alt="cart"> {{totalQty}} pcs / {{totalPrice | number :2}} $</p>
 			</div>
 			<div id="sidebar" class="col-md-2">
         		<ul class="nav nav-pills nav-stacked">
 		          <li role="presentation" ><a href="#" class="alert alert-danger"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-		          <li role="presentation"></span><a href="#" class="alert alert-danger"><span class="glyphicon glyphicon-user"></span>Account</a></li>
+		          <li role="presentation"><a href="#" class="alert alert-danger"><span class="glyphicon glyphicon-user"></span>Account</a></li>
 		          <li role="presentation"><a href="#" class="alert alert-info"><span class="glyphicon glyphicon-shopping-cart"></span>Offer</a></li>
 		          <li role="presentation"><a href="#" class="alert alert-info"><span class="glyphicon glyphicon-envelope"></span>Contact</a></li>
 		        </ul>
@@ -29,16 +30,16 @@
 								<tr><h2>List of selected products</h2></tr>
 							</thead>
 							<tbody>
-								<tr class="trBold">
-									<td class="col-md-1 text-center">Id.</td>
-									<td class="col-md-7 text-center name">Name</td>
-									<td class="col-md-2 text-center">Quantity</td>
-									<td class="col-md-2 text-center">Price</td>
+								<tr class="trBold" ng-repeat="item in order track by $index">
+									<td class="col-md-1 text-center">{{$index+1}}</td>
+									<td class="col-md-7 text-center name">{{item.name}}</td>
+									<td class="col-md-2 text-center">{{item.qty}} pcs</td>
+									<td class="col-md-2 text-center">{{item.price}} $</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<h3 class="text-right summ"><strong>SUM:</strong></h3>
+					<h3 class="text-right summ"><strong>Sum:{{totalPrice | number :2}} $</strong></h3>
 					<hr>
 
 					<form class="table table-hover">
@@ -52,11 +53,11 @@
 					        </thead>
 					        <tbody>
 					          <tr>
-					            <td><input type="text" class='form-control' ></td>
-					            <td><input type="number" class='form-control' min='1' ></td>
-					            <td><input type="number" class='form-control' min='1'></td>
-					            <td><button type="submit" class="btn btn-warning" >Add to basket</button></td>
-					            <td><button type="button" class="btn btn-danger btn-sm" >Clear</button></td>
+					            <td><input type="text" class='form-control' ng-model="product.name" ></td>
+					            <td><input type="number" class='form-control' ng-model="product.qty" min='1' ></td>
+					            <td><input type="number" class='form-control' ng-model="product.price" min='1'></td>
+					            <td><button type="submit" class="btn btn-warning" ng-click="addProduct(product)">Add to basket</button></td>
+					            <td><button type="button" class="btn btn-danger btn-sm" ng-click="clearBasket()" >Clear</button></td>
 					          </tr>
 					        </tbody>
 					      </table>
@@ -64,7 +65,7 @@
 				</div>
 			</div>
 		</div>
-	
+	</div>
 
 
 
@@ -72,7 +73,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+    <script src="https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script> 
     <script src="js/js.js"></script>
 	
 </body>
