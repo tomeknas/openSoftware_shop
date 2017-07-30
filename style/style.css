@@ -18,5 +18,30 @@ body{
 	border: 2px solid green;
 	height:15%;
 	box-sizing:border-box;
-	
+}
+#header p {
+font-size: 30px;
+margin-top:20px;
+}
+#sidebar{
+	border: 2px solid green;
+	height:85%;
+	box-sizing: border-box;
+}
+#content{
+	border: 2px solid green;
+	height:85%;
+	box-sizing: border-box;
+}
+li span{
+	margin-right: 20px;
+}
+#sidebar a {
+	font-size: 16px;
+}
+.nav-pills{
+	margin-top:25px;
+}
+.products{
+	height:300px;
 }
