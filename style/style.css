@@ -51,3 +51,9 @@ li span{
 .summ{
 	margin-right:60px;
 }
+.table td{
+	padding-right:10px;
+}
+.trBold td{
+	font-weight: bold;
+}

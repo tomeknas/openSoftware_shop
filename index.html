@@ -29,7 +29,7 @@
 								<tr><h2>List of selected products</h2></tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr class="trBold">
 									<td class="col-md-1 text-center">Id.</td>
 									<td class="col-md-7 text-center name">Name</td>
 									<td class="col-md-2 text-center">Quantity</td>
@@ -39,6 +39,27 @@
 						</table>
 					</div>
 					<h3 class="text-right summ"><strong>SUM:</strong></h3>
+					<hr>
+
+					<form class="table table-hover">
+        				<table>
+        					<thead>
+					          <tr>
+					            <th>Name</th>
+					            <th>Qty</th>
+					            <th>Price</th>
+					          </tr>
+					        </thead>
+					        <tbody>
+					          <tr>
+					            <td><input type="text" class='form-control'  ></td>
+					            <td><input type="number" class='form-control' min='1' ></td>
+					            <td><input type="number" class='form-control' min='1'></td>
+					            <td><button type="submit" class="btn btn-warning" >Add to basket</button></td>
+					          </tr>
+					        </tbody>
+					      </table>
+					      </form>
 				</div>
 			</div>
 		</div>
