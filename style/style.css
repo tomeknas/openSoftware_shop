@@ -1,0 +1,22 @@
+body{
+	margin:0px;
+	padding: 0px;
+	background: url("../img/glass3.jpeg") no-repeat;
+	background-size: 100%;
+}
+
+.container{
+	margin-top:20px;
+	height:600px;
+	width:1000px;
+	border: 2px solid red;
+	background-color:white;
+	opacity:0.9;
+	border-radius:20px;
+}
+#header{
+	border: 2px solid green;
+	height:15%;
+	box-sizing:border-box;
+	
+}
