@@ -38,7 +38,21 @@ var app = angular.module('app', ['angular-storage']);
             }
    };
 
-    
+    $scope.validate=function(product){
+      var patternNumber = /^\d+$/;
+      var patternPrice = /^\d*\.\d*$/;
+      if(product.name && patternNumber.test(product.qty) && ( patternPrice.test(product.price)||patternNumber.test(product.price))){
+        $scope.status=false;
+        console.log($scope.status);
+        return true;
+      }
+      else{
+        $scope.status=true;
+        console.log($scope.status);
+        return false;
+      }
+    };
+     
     $scope.clearBasket=function(){
       confirm('Are you sure you want to delete all the contents of your cart?');
       store.remove('cart');
@@ -47,16 +61,9 @@ var app = angular.module('app', ['angular-storage']);
       $scope.totalPrice = 0;
     };
 
-    $scope.validate=function(product){
-      var patternNumber = /^\d+$/;
-      var patternPrice = /^\d*\.\d*$/;
-      if(product.name && patternNumber.test(product.qty) && ( patternPrice.test(product.price)||patternNumber.test(product.price))){
-        return true;
-      }
-      else{
-        return false;
-      }
-    };
+    
+  
+    
 		
 
     
