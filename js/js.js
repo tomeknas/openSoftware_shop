@@ -3,6 +3,7 @@
 var app = angular.module('app', ['angular-storage']);
 	app.controller('ctrl', ['$scope', 'store', function($scope, store){
 		
+   
     var inBasket=0;
     var qa=0;
     if (store.get('cart')) {
@@ -17,7 +18,6 @@ var app = angular.module('app', ['angular-storage']);
         }
     $scope.totalPrice = inBasket;
     $scope.totalQty = qa;
-
 
 
     $scope.addProduct = function(product){
@@ -52,7 +52,7 @@ var app = angular.module('app', ['angular-storage']);
         return false;
       }
     };
-     
+    /* 
     $scope.clearBasket=function(){
       confirm('Are you sure you want to delete all the contents of your cart?');
       store.remove('cart');
@@ -60,7 +60,7 @@ var app = angular.module('app', ['angular-storage']);
       $scope.totalQty = 0 ;
       $scope.totalPrice = 0;
     };
-
+    */
     
   
     
