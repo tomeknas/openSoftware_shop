@@ -42,6 +42,11 @@ var app = angular.module('app', ['angular-storage']);
 
     
     $scope.clearBasket=function(){
+      confirm('Are you sure you want to delete all the contents of your cart?');
+     store.remove('cart');
+    $scope.order=[];
+    $scope.totalQty = 0 ;
+    $scope.totalPrice = 0;
 
     }
 		
