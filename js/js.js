@@ -21,9 +21,7 @@ var app = angular.module('app', ['angular-storage']);
 
 
     $scope.addProduct = function(product){
-          var wzor = /^[0-9]+$/;
-          if(product.name && wzor.test(product.qty) && wzor.test(product.price)){
-
+      if($scope.validate(product)){
               $scope.order.push({
               name:product.name,
               qty:product.qty,
@@ -43,12 +41,22 @@ var app = angular.module('app', ['angular-storage']);
     
     $scope.clearBasket=function(){
       confirm('Are you sure you want to delete all the contents of your cart?');
-     store.remove('cart');
-    $scope.order=[];
-    $scope.totalQty = 0 ;
-    $scope.totalPrice = 0;
+      store.remove('cart');
+      $scope.order=[];
+      $scope.totalQty = 0 ;
+      $scope.totalPrice = 0;
+    };
 
-    }
+    $scope.validate=function(product){
+      var patternNumber = /^\d+$/;
+      var patternPrice = /^\d*\.\d*$/;
+      if(product.name && patternNumber.test(product.qty) && ( patternPrice.test(product.price)||patternNumber.test(product.price))){
+        return true;
+      }
+      else{
+        return false;
+      }
+    };
 		
 
     
