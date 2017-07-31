@@ -39,6 +39,8 @@ li span{
 	margin-top:25px;
 }
 .products{
+	overflow:scroll;
+	overflow-x:hidden;
 	height:300px;
 }
 .name{
